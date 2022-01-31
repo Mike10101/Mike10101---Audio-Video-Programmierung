@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <link rel = "stylesheet" type = "text/css" href = "style.css">
+</head>
+<body>
+    <h3>The Music output is generated here!</h3>
+    <div id ="percussionTable">
+        <table>
+            <tr>
+                <th class="thTop" class="thLeft">top left</th>
+                <th class="thTop">top center</th>
+                <th class="thTop" class="thRight">top right</th>
+            </tr>
+            <tr>
+                <th class="thLeft" id="clapIndicator">deactivated</th>
+                <th id ="tomIndicator">deactivated</th>
+                <th class="thRight" id ="snapIndicator">deactivated</th>
+            </tr>
+            <tr>
+                <th class="thLeft" >middle left</th>
+                <th> center</th>
+                <th class="thRight">middle right</th>
+            </tr>
+            <tr>
+                <th class="thLeft" id ="snareIndicator">deactivated</th>
+                <th  id="kickIndicator">deactivated</th>
+                <th  class="thRight" id="synthIndicator">deactivated</th>
+            </tr>
+            <tr>
+                <th class="thLeft">Bottom Left</th>
+                <th>Bottom Center</th>
+                <th class="thRight">bottom right</th>
+            </tr>
+            <tr>
+                <th id="hihatIndicator"class="thLeft">deactivated</th>
+                <th id="shakerIndicator">deactivated</th>
+                <th id="rimIndicator" class="thRight">deactivated</th>
+            </tr>
+        </table>
+    </div>
+
+
+    <button id="button1" class="button">1</button>
+    <button id="button2" class="button">2</button>
+    <script src="midi.js"></script>
+    <script src="synth.js"></script>
+    <script src="filter.js"></script>
+    <script src="distortion.js"></script>
+    <script src="convolver.js"></script>
+    <script src="percussion.js"></script>
+</body>
