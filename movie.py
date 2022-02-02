@@ -120,7 +120,7 @@ def mouse_click(event, x, y,
     # to check if left mouse 
     # button was clicked
     if event == cv2.EVENT_LBUTTONDOWN:
-        print("X ", x,  " Y ", y)
+        #print("X ", x,  " Y ", y)
         if x<= x1 and  y <= y1:
             mousePosition = 0
             sendMousePosition(mousePosition, 1)
@@ -227,7 +227,7 @@ while(True):
     # Capture the video frame
     ret, frame = vid.read()
 
-    
+
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     h, s, v = cv2.split(hsv)
     #count Variablen
