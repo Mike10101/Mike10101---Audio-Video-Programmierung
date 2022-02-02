@@ -1,4 +1,3 @@
-#from re import M
 import mido
 import cv2
 import numpy as np
@@ -228,7 +227,7 @@ while(True):
     # Capture the video frame
     ret, frame = vid.read()
 
-
+    
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     h, s, v = cv2.split(hsv)
     #count Variablen
