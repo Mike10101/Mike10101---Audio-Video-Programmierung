@@ -5,7 +5,7 @@ A little project for HAW University of Applied Sciences - Department of Media Te
 * Python 3
 * Javascript Vanilla
 * Visual Studio Code Live Server Extention
-* [Face Detection Framework and Model by spmallick](https://github.com/spmallick/learnopencv/tree/master/FaceDetectionComparison/models)
+* [Face Detection Caffe Framework and Model by spmallick](https://github.com/spmallick/learnopencv/tree/master/FaceDetectionComparison/models)
 
 # Setup
 Both the Face Detection Framework/Model and the video used for the video analysation need to be added seperately.
