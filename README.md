@@ -1,4 +1,4 @@
-## Mike10101---Audio-Video-Programmierung
+## Mike10101 Audio-Video-Programmierung
 A little project for HAW university Department of Media Technology for generating a live audio stream from a live video stream by pop music videos.
 
 # Dependencies
