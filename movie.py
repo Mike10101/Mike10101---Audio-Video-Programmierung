@@ -43,8 +43,6 @@ array_v8 = np.array([])
 array_v9 = np.array([])
 
 average_v = 0
-average_v2 = 0
-average_v3 = 0
 array_average_v = []
 #Positions Variable
 position_max = 0

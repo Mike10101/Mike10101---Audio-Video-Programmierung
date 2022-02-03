@@ -32,8 +32,8 @@ function onMIDIMessage(event) {
         // your function controlChange(controllerNr, value)
         // controlChange(event.data[1])
         sendValue_Max(event.data[1])
-        console.log(event.data[1]);
-        console.log(event.data[2]);
+        //console.log(event.data[1]);
+        //console.log(event.data[2]);
         break;
     case 177:
         sendMousePosition(event.data[1],event.data[2]); 

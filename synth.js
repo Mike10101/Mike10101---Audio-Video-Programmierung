@@ -132,9 +132,9 @@ function startNote(note, velocity) {
         oscillators[i][note].connect(velocityVolumes[i][note]);
         oscillators[i][note].connect(masterGain);
         masterGain.connect(context.destination);
-          oscillators[i][note].start();
+        oscillators[i][note].start();
         //attack
-        velocityVolumes[i][note].gain.linearRampToValueAtTime(0.05 + (0.33 * (velocity/127)), context.currentTime + attack);
+        velocityVolumes[i][note].gain.linearRampToValueAtTime(0.05 + (0.33 * (velocity/76)), context.currentTime + attack);
     }
 }
 
