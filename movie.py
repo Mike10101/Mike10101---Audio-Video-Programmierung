@@ -160,7 +160,7 @@ def mouse_click(event, x, y,
 #funktion Auswertung Bild ohne Face Detection
 def auswertung_bildabschnitt1():
     #Durchschnittswerte Helligkeit Bildausschnitte
-    #die bildabschnitte werd durch die copy funktion ausgeschnitten
+    #die bildabschnitte werd durch die copy() funktion ausgeschnitten
     array_v = v[0:x1, 0:y1].copy()
     average_v = np.average(array_v)
     array_average_v.append(average_v)
@@ -191,8 +191,7 @@ def auswertung_bildabschnitt1():
 
     # Hier wird die hellste Stelle übertragen das hat einfluss auf die Wellenform 
     sendValue_Max(position_max, 20)   
-    #Hier wird ausgerechnet wie der Tonsprung sein wird
-    #dafür ist die Farbe im Bild zuständig
+    #Hier wird ausgerechnet wie der Tonsprung sein wird, dafür ist die Farbe im Bild zuständig
     if array_average_hue <40:
         addition = -8
     elif array_average_hue>40 and array_average_hue <80:
@@ -225,10 +224,9 @@ while(True):
     # Capture the video frame
     ret, frame = vid.read()
 
-
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     h, s, v = cv2.split(hsv)
-    #count Variablen
+    #count Variablen um Auswertung und Face Detection einzugrenzen
     count1 +=1
     count2 +=1
 
@@ -239,7 +237,7 @@ while(True):
         detectFaceOpenCVDnn(net, frame)
         count2 = 0
     
-    #Anzeige Video und Callback Mausklick
+    #Anzeige des Video und MausklickCallback
     cv2.imshow('frame', frame)
     cv2.setMouseCallback('frame', mouse_click)
 

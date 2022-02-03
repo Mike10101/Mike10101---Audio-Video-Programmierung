@@ -69,7 +69,7 @@ let flute1 = new Audio("randomChords/Flute1.wav");
 let flute2 = new Audio("randomChords/Flute2.wav");
 let flute3 = new Audio("randomChords/Flute3.wav");
 
-//Audio Effekts und Oscillator
+//Audio Effekte und Oscillator
 let context = new AudioContext();
 let masterGain = context.createGain();
 let lfo = context.createOscillator();
@@ -95,7 +95,7 @@ lfo.connect(lfoGain);
 masterGain.gain.value = 0.2;
 
 
-//Listener für mausklick
+//Listener für Mausklick
 for (let i = 0; i < 2; i++) {
  
     button[i].addEventListener("mousedown", function() {startNote(i + octaveShifter, 76)});
@@ -116,24 +116,27 @@ for (let i = 0; i < 76; i++) {
 function startNote(note, velocity) {
     for (let i = 0; i < 2; i++) {
         
-        // für die Noten Oscillatoren erstellen
+        // Oscillatoren für die Noten erstellen
         oscillators[i][note] = context.createOscillator();
         oscillators[i][note].type = osctypes[i];
         oscillators[i][note].frequency.value = allFrequencies[note];
         if (i === 1) { oscillators[i][note].detune.value = 2;}
         velocityVolumes[i][note].gain.cancelScheduledValues(0);
         velocityVolumes[i][note].gain.setValueAtTime(0, context.currentTime);
-        //Verbinden der Effekt Kette
+
+        //Verbinden der Audio Nodes zum Audio Graphen
         distortion.connect(filter);
         filter.connect(convolver);
         convolver.connect(masterGain);
         lfoGain.connect(velocityVolumes[0][note].gain);
+
         //Lautstärke verbinden
         oscillators[i][note].connect(velocityVolumes[i][note]);
         oscillators[i][note].connect(masterGain);
         masterGain.connect(context.destination);
         oscillators[i][note].start();
-        //attack
+
+        //Attack Effekt
         velocityVolumes[i][note].gain.linearRampToValueAtTime(0.05 + (0.33 * (velocity/76)), context.currentTime + attack);
     }
 }
@@ -178,7 +181,7 @@ function sendValue_Max(valueMax){
     }
 }
 
-//Funktion die die Filter modifiziert
+//Funktion, die die Filter modifiziert
 function sendValue_Min(val){
     if(val == 0) {
 
@@ -283,7 +286,7 @@ function sendValue_Min(val){
      }
 }
 
-//Funktion die samples auslöst nachdem Face Detection erfolgt ist
+//Funktion , die die Samples auslöst nachdem Face Detection erfolgt ist
 function sendFaceDetection(number){
     random = Math.floor(Math.random() * 3)
     if (number ==1){

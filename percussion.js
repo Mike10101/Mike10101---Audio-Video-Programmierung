@@ -37,6 +37,7 @@ let sechzehntel = 126;
 let achtel = 252;
 let viertel = 504;
 
+//Ausführen von Percussion bei Mausclick in Videofeldern
 function sendMousePosition(position,ctr){
     ctr = ctr;
     if(position ==0) {
